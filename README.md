@@ -48,7 +48,7 @@ The installer copies `damin.theme` into `~/.config/btop/themes/` and, if you con
 
    Or edit `~/.config/btop/btop.conf` directly:
    ```
-   color_theme = "themes/damin"
+   color_theme = "damin"
    ```
 
 ## Notes on the gradients

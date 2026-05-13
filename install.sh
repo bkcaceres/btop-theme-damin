@@ -153,30 +153,30 @@ step "Set color_theme in btop.conf"
 
 if [ ! -f "$CONF_FILE" ]; then
     info "no $CONF_FILE yet — pick 'damin' under Options after first launch"
-    info 'or set:  color_theme = "themes/damin"'
+    info 'or set:  color_theme = "damin"'
 else
     current=$(grep -E '^color_theme[[:space:]]*=' "$CONF_FILE" | head -n1 \
         | sed -E 's/^color_theme[[:space:]]*=[[:space:]]*//; s/^"//; s/"$//' || printf '')
 
-    if [ "$current" = "themes/$THEME_NAME" ]; then
-        ok "already set to themes/$THEME_NAME — nothing to do"
+    if [ "$current" = "$THEME_NAME" ]; then
+        ok "already set to $THEME_NAME — nothing to do"
     elif [ ! -r /dev/tty ]; then
         info "non-interactive — leaving btop.conf untouched"
-        info 'set:  color_theme = "themes/damin"'
+        info 'set:  color_theme = "damin"'
     elif prompt_yes "Rewrite color_theme in $CONF_FILE (currently: ${current:-<unset>})?"; then
         # Portable in-place edit: BSD sed needs a backup suffix, so go via a temp file.
         tmp="$(mktemp)"
         if grep -qE '^color_theme[[:space:]]*=' "$CONF_FILE"; then
-            sed -E 's|^color_theme[[:space:]]*=.*|color_theme = "themes/'"$THEME_NAME"'"|' \
+            sed -E 's|^color_theme[[:space:]]*=.*|color_theme = "'"$THEME_NAME"'"|' \
                 "$CONF_FILE" >"$tmp"
         else
             cp "$CONF_FILE" "$tmp"
-            printf '\ncolor_theme = "themes/%s"\n' "$THEME_NAME" >>"$tmp"
+            printf '\ncolor_theme = "%s"\n' "$THEME_NAME" >>"$tmp"
         fi
         mv "$tmp" "$CONF_FILE"
         ok "btop.conf updated — restart btop to see it"
     else
-        info 'skipped — set:  color_theme = "themes/damin"'
+        info 'skipped — set:  color_theme = "damin"'
     fi
 fi
 
